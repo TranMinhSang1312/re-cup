@@ -263,11 +263,6 @@ export function HeroCupExperience() {
         <CupIllustration cupOpacityClassName={supportsScene ? "opacity-0" : "opacity-100"} />
       </div>
 
-      {supportsScene ? (
-        <div className="pointer-events-none absolute bottom-[7%] left-1/2 z-20 -translate-x-1/2 whitespace-nowrap rounded-full border border-forest/15 bg-cream-light/85 px-4 py-2 text-[0.62rem] font-semibold uppercase tracking-[0.18em] text-forest shadow-sm backdrop-blur-sm">
-          Giữ trên ly và kéo để xoay 360°
-        </div>
-      ) : null}
     </div>
   );
 }

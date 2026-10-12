@@ -10,7 +10,7 @@ The site should explain the project clearly, feel credible, and use one memorabl
 
 ## 2. Current status
 
-- **Phase:** Complete — local landing-page v1.4 with layered product interaction
+- **Phase:** Complete — local landing-page v1.6 with simplified presentation copy
 - **Local project:** `project/recup-landing`
 - **Target development URL:** `http://localhost:3000`
 - **Deployment:** out of scope until explicitly requested
@@ -207,4 +207,6 @@ recup-landing/
 | 2026-10-13 | Removed the scroll-driven exploded shells and material callouts; the assembled cup now uses pointer-drag 360-degree rotation on desktop. |
 | 2026-10-13 | Removed the procedural fiber texture from both WebGL and SVG render paths in favor of a smooth kraft finish; rebuilt the hero proposition as an intentional two-line lockup with separately balanced supporting copy. |
 | 2026-10-13 | Added screen-wide cursor parallax as a subtle translation/tilt layer while keeping direct cup dragging dedicated to 360-degree rotation; restored the full RETHINK · RETURN · REGROW mark on every cup render path. |
+| 2026-10-13 | Added an accessible floating two-button section stepper with nine intentional stops, smooth scrolling, clear solid controls, endpoint locking, and reduced-motion support. |
+| 2026-10-13 | Removed the cup interaction hint, prototype-image disclaimer, and material-ratio research note to simplify the presentation and eliminate competing peripheral copy. |
 

@@ -11,6 +11,7 @@ import { CyclePath } from "@/components/visuals/cycle-path";
 import { BrandMark } from "@/components/ui/brand-mark";
 import { PageMotion } from "@/components/ui/page-motion";
 import { SectionLabel } from "@/components/ui/section-label";
+import { SectionStepper } from "@/components/ui/section-stepper";
 import { SiteHeader } from "@/components/ui/site-header";
 import {
   cycleSteps,
@@ -24,6 +25,7 @@ export default function Home() {
     <main id="top" className="overflow-hidden">
       <PageMotion />
       <SiteHeader />
+      <SectionStepper />
 
       <section className="relative isolate min-h-screen overflow-hidden bg-cream-light px-5 pb-14 pt-28 sm:px-8 lg:px-12 lg:pb-10">
         <div className="hero-grid pointer-events-none absolute inset-0 -z-20 opacity-50" />
@@ -73,9 +75,6 @@ export default function Home() {
 
           <div className="relative min-h-[30rem] lg:min-h-[44rem]">
             <HeroCupExperience />
-            <div className="absolute bottom-0 right-0 hidden max-w-48 border-l border-forest/20 pl-4 text-xs leading-5 text-charcoal/55 sm:block">
-              Hình ảnh mô phỏng thiết kế, không phải nguyên mẫu sản xuất.
-            </div>
           </div>
         </div>
 
@@ -121,7 +120,10 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="bg-cream px-5 py-24 sm:px-8 sm:py-32 lg:px-12">
+      <section
+        id="idea"
+        className="scroll-mt-6 bg-cream px-5 py-24 sm:px-8 sm:py-32 lg:px-12"
+      >
         <div className="mx-auto max-w-[90rem]">
           <div className="grid gap-16 lg:grid-cols-[0.72fr_1.28fr] lg:items-start">
             <div className="lg:sticky lg:top-10">
@@ -170,7 +172,7 @@ export default function Home() {
         className="scroll-mt-6 bg-cream-light px-5 py-24 sm:px-8 sm:py-32 lg:px-12"
       >
         <div className="mx-auto max-w-[90rem]">
-          <div className="flex flex-col gap-8 border-b border-forest/15 pb-12 lg:flex-row lg:items-end lg:justify-between">
+          <div className="border-b border-forest/15 pb-12">
             <div>
               <SectionLabel index="03">Cấu trúc vật liệu</SectionLabel>
               <h2 data-reveal className="mt-8 max-w-4xl font-display text-[clamp(3.6rem,7vw,7.5rem)] leading-[0.88] tracking-[-0.055em] text-forest">
@@ -179,11 +181,6 @@ export default function Home() {
                 <em className="font-normal text-coconut">bên trong chiếc ly.</em>
               </h2>
             </div>
-            <p className="max-w-md text-sm leading-6 text-charcoal/55 lg:pb-2">
-              Các tỷ lệ dưới đây là khoảng giả định cho giai đoạn nghiên cứu.
-              Công thức cuối cùng phải được xác nhận bằng thử nghiệm thực tế và
-              luôn có tổng tỷ lệ bằng 100%.
-            </p>
           </div>
 
           <div className="divide-y divide-forest/15">
@@ -270,7 +267,10 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="bg-clay px-5 py-24 text-forest-deep sm:px-8 sm:py-32 lg:px-12">
+      <section
+        id="value"
+        className="scroll-mt-6 bg-clay px-5 py-24 text-forest-deep sm:px-8 sm:py-32 lg:px-12"
+      >
         <div className="mx-auto max-w-[90rem]">
           <SectionLabel index="05">Ba lớp giá trị</SectionLabel>
           <div className="mt-14 divide-y divide-forest-deep/20 border-y border-forest-deep/20">
@@ -394,7 +394,10 @@ export default function Home() {
         </div>
       </section>
 
-      <footer className="bg-cream px-5 pb-8 pt-20 sm:px-8 lg:px-12">
+      <footer
+        id="closing"
+        className="scroll-mt-6 bg-cream px-5 pb-8 pt-20 sm:px-8 lg:px-12"
+      >
         <div className="mx-auto max-w-[90rem]">
           <div className="grid gap-12 border-b border-forest/15 pb-16 lg:grid-cols-[1fr_auto] lg:items-end">
             <div>
