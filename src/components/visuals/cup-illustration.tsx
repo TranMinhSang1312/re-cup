@@ -17,15 +17,20 @@ export function CupIllustration({
         xmlns="http://www.w3.org/2000/svg"
       >
         <defs>
-          <linearGradient id="cup-body" x1="188" y1="185" x2="408" y2="624">
-            <stop stopColor="#DAB17C" />
-            <stop offset="0.5" stopColor="#C38E55" />
-            <stop offset="1" stopColor="#9B6337" />
-          </linearGradient>
-          <linearGradient id="cup-lid" x1="196" y1="116" x2="402" y2="214">
-            <stop stopColor="#FFFDF7" />
-            <stop offset="0.56" stopColor="#F3EDDF" />
-            <stop offset="1" stopColor="#D9D0C1" />
+          <pattern id="fiber-body" width="92" height="92" patternUnits="userSpaceOnUse">
+            <rect width="92" height="92" fill="#C58A55" />
+            <path d="M-8 18C18 4 38 31 62 12" stroke="#E2B579" strokeWidth="1.6" strokeLinecap="round" opacity="0.62" />
+            <path d="M28 79C46 57 69 72 101 48" stroke="#6F442B" strokeWidth="1.2" strokeLinecap="round" opacity="0.42" />
+            <path d="M5 54C30 47 44 62 75 45" stroke="#E7C18D" strokeWidth="1.1" strokeLinecap="round" opacity="0.55" />
+            <path d="M73 2C58 25 75 36 91 42" stroke="#8B5834" strokeWidth="1.2" strokeLinecap="round" opacity="0.38" />
+            <circle cx="16" cy="33" r="1.2" fill="#65402A" opacity="0.55" />
+            <circle cx="55" cy="86" r="0.9" fill="#F0D09F" opacity="0.62" />
+            <circle cx="82" cy="61" r="1.1" fill="#70452C" opacity="0.48" />
+          </pattern>
+          <linearGradient id="inner-cup" x1="216" y1="131" x2="370" y2="201">
+            <stop stopColor="#7B4A2D" />
+            <stop offset="0.58" stopColor="#A76D3F" />
+            <stop offset="1" stopColor="#D3A066" />
           </linearGradient>
           <filter id="soft-shadow" x="80" y="58" width="440" height="650" filterUnits="userSpaceOnUse">
             <feDropShadow dx="0" dy="24" stdDeviation="22" floodColor="#173F2C" floodOpacity="0.19" />
@@ -36,44 +41,40 @@ export function CupIllustration({
           <ellipse cx="300" cy="646" rx="108" ry="22" fill="#173F2C" fillOpacity="0.12" />
 
           <path
-            d="M176 180H424L394 570C391 605 352 628 300 628C248 628 209 605 206 570L176 180Z"
-            fill="url(#cup-body)"
+            d="M165 160H435L397 556C394 584 353 603 300 603C247 603 206 584 203 556L165 160Z"
+            fill="url(#fiber-body)"
           />
-          <ellipse cx="300" cy="575" rx="94" ry="30" stroke="#7C4D2B" strokeOpacity="0.28" strokeWidth="3" />
+          <path
+            d="M201 553C221 570 257 579 300 579C343 579 379 570 399 553L395 594C392 614 352 629 300 629C248 629 208 614 205 594L201 553Z"
+            fill="url(#fiber-body)"
+            stroke="#8A5635"
+            strokeOpacity="0.54"
+            strokeWidth="3"
+          />
 
-          <path
-            d="M164 153H436L428 187C424 207 369 219 300 219C231 219 176 207 172 187L164 153Z"
-            fill="url(#cup-lid)"
-          />
-          <ellipse cx="300" cy="153" rx="136" ry="40" fill="#F6F0E4" />
-          <path
-            d="M188 144C188 125 238 111 300 111C362 111 412 125 412 144V168C412 185 362 199 300 199C238 199 188 185 188 168V144Z"
-            fill="url(#cup-lid)"
-          />
-          <ellipse cx="300" cy="144" rx="112" ry="32" fill="#FFFCF5" />
-          <ellipse cx="300" cy="145" rx="92" ry="23" stroke="#D7CFC1" strokeWidth="3" />
-          <path d="M184 174C224 193 376 193 416 174" stroke="#D0C7B8" strokeWidth="3" />
-          <path d="M172 188C218 211 382 211 428 188" stroke="#C8BEAF" strokeWidth="4" />
-          <rect x="274" y="125" width="52" height="10" rx="5" fill="#C5BCAD" />
+          <ellipse cx="300" cy="160" rx="141" ry="39" fill="#D6A36C" />
+          <ellipse cx="300" cy="158" rx="124" ry="29" fill="url(#inner-cup)" />
+          <ellipse cx="300" cy="159" rx="139" ry="38" fill="none" stroke="#9C653E" strokeWidth="4" />
+          <path d="M177 162C210 184 390 184 423 162" stroke="#E5BD88" strokeWidth="3" strokeLinecap="round" opacity="0.62" />
 
           <g fill="#173F2C">
-            <path d="M300 336C299 310 298 289 297 267" stroke="#173F2C" strokeWidth="7" strokeLinecap="round" />
-            <path d="M290 302C252 299 233 278 232 248C269 251 290 269 290 302Z" />
-            <path d="M306 288C318 255 344 243 375 250C365 281 342 296 306 288Z" />
-            <text x="300" y="392" textAnchor="middle" fontFamily="Arial, sans-serif" fontSize="44" fontWeight="700" letterSpacing="1">
+            <path d="M300 340C299 313 297 286 294 260" stroke="#173F2C" strokeWidth="7" strokeLinecap="round" />
+            <path d="M289 307C248 299 227 272 231 237C271 246 291 270 289 307Z" />
+            <path d="M307 291C327 251 362 238 397 252C379 290 348 306 307 291Z" />
+            <text x="300" y="407" textAnchor="middle" fontFamily="Arial, sans-serif" fontSize="54" fontWeight="700" letterSpacing="1">
               RE-CUP
             </text>
-            <text x="300" y="423" textAnchor="middle" fontFamily="Arial, sans-serif" fontSize="12" fontWeight="700" letterSpacing="1.5">
-              RETHINK · RETURN · REGROW
+            <path d="M251 445H349" stroke="#173F2C" strokeWidth="5" strokeLinecap="round" />
+            <text x="300" y="478" textAnchor="middle" fontFamily="Arial, sans-serif" fontSize="15" fontWeight="700" letterSpacing="4">
+              RETHINK
+            </text>
+            <text x="300" y="504" textAnchor="middle" fontFamily="Arial, sans-serif" fontSize="15" fontWeight="700" letterSpacing="4">
+              RETURN
+            </text>
+            <text x="300" y="530" textAnchor="middle" fontFamily="Arial, sans-serif" fontSize="15" fontWeight="700" letterSpacing="4">
+              REGROW
             </text>
           </g>
-        </g>
-
-        <g fill="#A96D3D">
-          <circle cx="103" cy="235" r="3" />
-          <circle cx="496" cy="333" r="2.5" />
-          <circle cx="126" cy="532" r="2.5" />
-          <circle cx="474" cy="589" r="3" />
         </g>
       </svg>
     </div>
