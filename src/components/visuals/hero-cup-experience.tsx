@@ -398,7 +398,7 @@ export function HeroCupExperience() {
 
   return (
     <div
-      className="relative mx-auto aspect-[4/5] w-full max-w-[34rem]"
+      className="hero-cup-stage relative mx-auto aspect-[4/5] w-full max-w-[34rem]"
       aria-hidden="true"
     >
       {supportsScene ? (

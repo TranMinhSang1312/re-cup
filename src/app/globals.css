@@ -63,18 +63,293 @@ button {
   outline-offset: 4px;
 }
 
-.hero-grid {
-  background-image:
-    linear-gradient(to right, color-mix(in srgb, var(--forest) 7%, transparent) 1px, transparent 1px),
-    linear-gradient(to bottom, color-mix(in srgb, var(--forest) 7%, transparent) 1px, transparent 1px);
-  background-size: 64px 64px;
-  mask-image: linear-gradient(to bottom, black, transparent 88%);
+.hero-halo {
+  background:
+    radial-gradient(circle at 55% 42%, color-mix(in srgb, var(--leaf) 28%, transparent), transparent 31rem),
+    linear-gradient(135deg, transparent 12%, color-mix(in srgb, var(--cream) 68%, transparent) 100%);
+  clip-path: ellipse(78% 72% at 72% 44%);
 }
 
 .cycle-glow {
   background:
     radial-gradient(circle at 18% 16%, color-mix(in srgb, var(--clay) 45%, transparent), transparent 25rem),
     radial-gradient(circle at 84% 72%, color-mix(in srgb, var(--leaf) 24%, transparent), transparent 30rem);
+}
+
+.cycle-flow-dashes {
+  animation: cycle-flow 1.15s linear infinite;
+  animation-play-state: paused;
+}
+
+.cycle-runner {
+  filter: drop-shadow(0 0 9px color-mix(in srgb, var(--clay) 72%, transparent));
+  opacity: 0;
+  transition: opacity 320ms ease;
+}
+
+.cycle-journey[data-cycle-running="true"] .cycle-flow-dashes {
+  animation-play-state: running;
+}
+
+.cycle-journey[data-cycle-running="true"] .cycle-runner {
+  opacity: 1;
+}
+
+.cycle-checkpoint {
+  transform-box: fill-box;
+  transform-origin: center;
+  transition: transform 320ms cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.cycle-checkpoint__halo {
+  transform-box: fill-box;
+  transform-origin: center;
+  transition:
+    opacity 320ms ease,
+    transform 320ms cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.cycle-live-dot {
+  animation: cycle-live 1.4s ease-in-out infinite;
+}
+
+.cycle-card:hover,
+.cycle-card.is-cycle-active {
+  transform: translateY(-5px) !important;
+  background: color-mix(in srgb, var(--forest-deep) 82%, transparent);
+  box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--clay) 28%, transparent);
+}
+
+[data-cycle-point].is-cycle-active .cycle-checkpoint {
+  transform: scale(1.2);
+}
+
+[data-cycle-point].is-cycle-active .cycle-checkpoint__halo {
+  opacity: 0.85;
+  transform: scale(1.2);
+}
+
+.cycle-node-media-anchor {
+  pointer-events: none;
+  transform: translate(-50%, calc(-100% - 1.1rem));
+}
+
+.cycle-node-media,
+.cycle-node-media__stem {
+  filter: saturate(0.68) brightness(0.76);
+  opacity: 0.58;
+  transition:
+    border-color 320ms ease,
+    filter 320ms ease,
+    opacity 320ms ease,
+    transform 320ms cubic-bezier(0.2, 0.8, 0.2, 1),
+    box-shadow 320ms ease;
+}
+
+.cycle-node-media-anchor.is-cycle-active .cycle-node-media {
+  border-color: color-mix(in srgb, var(--clay) 86%, transparent);
+  filter: saturate(1) brightness(1);
+  opacity: 1;
+  transform: translateY(-4px) scale(1.12);
+  box-shadow: 0 12px 30px color-mix(in srgb, var(--clay) 24%, transparent);
+}
+
+.cycle-node-media-anchor.is-cycle-active .cycle-node-media__stem {
+  background: var(--clay);
+  filter: none;
+  opacity: 1;
+  transform: translateX(-50%) scaleY(1.25);
+}
+
+@keyframes cycle-flow {
+  to {
+    stroke-dashoffset: -11;
+  }
+}
+
+@keyframes cycle-live {
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 color-mix(in srgb, var(--clay) 42%, transparent);
+  }
+
+  50% {
+    box-shadow: 0 0 0 5px transparent;
+  }
+}
+
+.mission-marquee {
+  overflow: hidden;
+}
+
+.mission-marquee__track {
+  display: flex;
+  width: max-content;
+  animation: mission-marquee 26s linear infinite;
+  will-change: transform;
+}
+
+.mission-marquee__item {
+  display: flex;
+  flex: none;
+  align-items: center;
+  gap: 1.35rem;
+  padding-right: 1.35rem;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.mission-marquee__item span {
+  color: color-mix(in srgb, var(--forest-deep) 45%, transparent);
+}
+
+.material-film__motion {
+  transform-origin: center;
+  animation: material-film 8s cubic-bezier(0.45, 0, 0.55, 1) infinite alternate;
+  will-change: transform;
+}
+
+.material-film__scan {
+  position: absolute;
+  z-index: 1;
+  top: 12%;
+  right: 0;
+  left: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, color-mix(in srgb, var(--cream) 58%, transparent), transparent);
+  box-shadow: 0 0 18px color-mix(in srgb, var(--cream) 22%, transparent);
+  opacity: 0.55;
+  animation: material-scan 8s ease-in-out infinite;
+}
+
+.material-film__record {
+  animation: material-record 1.6s ease-in-out infinite;
+}
+
+@keyframes mission-marquee {
+  to {
+    transform: translateX(-33.333%);
+  }
+}
+
+@keyframes material-film {
+  0% {
+    transform: translate3d(-1.5%, -1%, 0) scale(1.04);
+  }
+
+  100% {
+    transform: translate3d(1.5%, 1%, 0) scale(1.1);
+  }
+}
+
+@keyframes material-scan {
+  0%,
+  100% {
+    top: 12%;
+    opacity: 0.24;
+  }
+
+  50% {
+    top: 76%;
+    opacity: 0.6;
+  }
+}
+
+@keyframes material-record {
+  0%,
+  100% {
+    opacity: 0.4;
+  }
+
+  50% {
+    opacity: 1;
+  }
+}
+
+@media (min-width: 1024px) {
+  .screen-section {
+    display: grid;
+    min-height: 100svh;
+    align-items: center;
+  }
+
+  .screen-section > :not(.absolute) {
+    width: 100%;
+  }
+}
+
+@media (min-width: 1440px) and (min-height: 820px) {
+  .screen-section {
+    min-height: min(100svh, 67.5rem);
+  }
+}
+
+@media (min-width: 1024px) and (max-height: 960px) {
+  .hero-section {
+    padding-top: 4.5rem !important;
+    padding-bottom: 1.25rem !important;
+  }
+
+  .hero-layout {
+    min-height: calc(100svh - 8.25rem) !important;
+  }
+
+  .hero-model {
+    min-height: 31rem !important;
+  }
+
+  .hero-cup-stage {
+    max-width: 28rem !important;
+  }
+
+  .concept-section,
+  .materials-section,
+  .research-section {
+    padding-top: 2rem !important;
+    padding-bottom: 2rem !important;
+  }
+
+  .concept-title {
+    font-size: clamp(3rem, 4.7vw, 5.25rem) !important;
+    line-height: 1.01 !important;
+  }
+
+  .mission-row {
+    padding-top: 0.9rem !important;
+    padding-bottom: 0.9rem !important;
+  }
+
+  .materials-visual {
+    min-height: calc(100svh - 4rem) !important;
+  }
+
+  .materials-title {
+    margin-top: 1rem !important;
+    font-size: clamp(2.8rem, 4.35vw, 4.8rem) !important;
+    line-height: 1.01 !important;
+  }
+
+  .materials-row {
+    padding-top: 0.9rem !important;
+    padding-bottom: 0.9rem !important;
+  }
+
+  .research-title {
+    font-size: clamp(3rem, 4.7vw, 5.2rem) !important;
+    line-height: 1.01 !important;
+  }
+
+  .research-grid {
+    margin-top: 1.75rem !important;
+  }
+
+  .research-card {
+    min-height: 15rem !important;
+    padding: 1.5rem !important;
+  }
 }
 
 .material-row {
@@ -138,5 +413,29 @@ button {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
+  }
+
+  .mission-marquee__track {
+    animation: none;
+  }
+
+  .material-film__motion {
+    animation: none;
+    transform: scale(1.04);
+  }
+
+  .material-film__scan,
+  .material-film__record {
+    animation: none;
+  }
+
+  .cycle-flow-dashes,
+  .cycle-live-dot {
+    animation: none !important;
+  }
+
+  .cycle-runner,
+  .cycle-live-label {
+    display: none;
   }
 }

@@ -10,11 +10,11 @@ The site should explain the project clearly, feel credible, and use one memorabl
 
 ## 2. Current status
 
-- **Phase:** Complete — local landing-page v1.6 with simplified presentation copy
+- **Phase:** In progress — v2 material-first editorial redesign
 - **Local project:** `project/recup-landing`
 - **Target development URL:** `http://localhost:3000`
 - **Deployment:** out of scope until explicitly requested
-- **Last updated:** 2026-10-13
+- **Last updated:** 2026-10-16
 
 ## 3. Confirmed constraints
 
@@ -62,16 +62,16 @@ The site should explain the project clearly, feel credible, and use one memorabl
 
 ## 6. Page narrative
 
-1. **Navigation** — Logo, anchor links, primary CTA.
-2. **Hero** — Brand proposition, short explanation, interactive cup visual.
-3. **Problem** — The unused potential of coconut fiber and the disposable-cup problem.
-4. **Solution** — What RE-CUP proposes and what remains subject to validation.
-5. **Material story** — Coconut fiber, bio-binder, and inner coating as an exploded product view.
-6. **Circular journey** — Material → cup → use → return → appropriate processing → new value.
-7. **Value pillars** — Economic, social, and environmental intent.
-8. **For F&B partners** — Product, collection concept, traceability, and brand communication value.
-9. **Brand story** — “Nếu xơ dừa vẫn còn một vòng đời khác thì sao?”
-10. **Closing CTA / footer** — Project contact or presentation-oriented next step.
+1. **Navigation** — Logo and anchors for story, material, validation, lifecycle, and F&B.
+2. **Hero** — Brand proposition and interactive product visual.
+3. **Coconut-fiber story** — Full-screen real-material photography and the founding question.
+4. **Mission** — By-product → packaging → collection → renewed value.
+5. **Material composition** — Coconut fiber, bio-binder, and PLA coating, all explicitly presented as estimated ranges.
+6. **Validation plan** — 3–5 material formulas and 30–60 minute use-condition checks presented as planned research, not achieved results.
+7. **Circular journey** — Material → cup → use → return → suitable validated processing.
+8. **Value pillars** — Economic, social, and environmental intent.
+9. **For F&B partners** — Cup, separate collection point, and traceable handover data.
+10. **Closing statement / footer** — Restates the documented mission and research-stage status.
 
 ## 7. Signature interaction
 
@@ -209,4 +209,7 @@ recup-landing/
 | 2026-10-13 | Added screen-wide cursor parallax as a subtle translation/tilt layer while keeping direct cup dragging dedicated to 360-degree rotation; restored the full RETHINK · RETURN · REGROW mark on every cup render path. |
 | 2026-10-13 | Added an accessible floating two-button section stepper with nine intentional stops, smooth scrolling, clear solid controls, endpoint locking, and reduced-motion support. |
 | 2026-10-13 | Removed the cup interaction hint, prototype-image disclaimer, and material-ratio research note to simplify the presentation and eliminate competing peripheral copy. |
+| 2026-10-16 | Reframed the full site around a material-first editorial narrative inspired by strong biomaterial and circular-product references; retained only claims traceable to the source document. |
+| 2026-10-16 | Moved the real coconut-fiber image into a dedicated full-screen story section and kept the cup as a separate product reveal in the hero. |
+| 2026-10-16 | Added a distinct validation section so planned formulas and use-condition checks cannot be mistaken for completed test results. |
 

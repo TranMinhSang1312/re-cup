@@ -5,13 +5,13 @@ import { ChevronDown, ChevronUp } from "lucide-react";
 
 const SECTION_STOPS = [
   { id: "top", label: "Mở đầu" },
-  { id: "concept", label: "Điểm bắt đầu" },
-  { id: "idea", label: "Ý tưởng" },
+  { id: "story", label: "Câu chuyện xơ dừa" },
+  { id: "concept", label: "Sứ mệnh RE-CUP" },
   { id: "materials", label: "Cấu trúc vật liệu" },
+  { id: "research", label: "Kế hoạch kiểm nghiệm" },
   { id: "cycle", label: "Vòng đời đề xuất" },
   { id: "value", label: "Ba lớp giá trị" },
   { id: "partners", label: "Dành cho F&B" },
-  { id: "story", label: "Câu chuyện RE-CUP" },
   { id: "closing", label: "Kết thúc hành trình" },
 ] as const;
 

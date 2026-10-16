@@ -38,11 +38,39 @@ export type ValuePillar = {
 };
 
 export const navigation: NavigationItem[] = [
-  { label: "Ý tưởng", href: "#concept" },
+  { label: "Câu chuyện", href: "#story" },
   { label: "Vật liệu", href: "#materials" },
+  { label: "Kiểm nghiệm", href: "#research" },
   { label: "Vòng đời", href: "#cycle" },
   { label: "Đối tác F&B", href: "#partners" },
 ];
+
+export const missionSteps = [
+  {
+    number: "01",
+    title: "Tận dụng phụ phẩm",
+    description:
+      "Xem xơ dừa như một nguồn vật liệu có thể tiếp tục được khai thác giá trị.",
+  },
+  {
+    number: "02",
+    title: "Tạo bao bì",
+    description:
+      "Nghiên cứu cách xử lý sợi, phối hợp vật liệu và tạo hình cho nhu cầu đồ uống mang đi.",
+  },
+  {
+    number: "03",
+    title: "Thu hồi sau sử dụng",
+    description:
+      "Đặt điểm thu gom riêng tại các điểm F&B tham gia thay vì bỏ ly chung với rác.",
+  },
+  {
+    number: "04",
+    title: "Tái tạo giá trị",
+    description:
+      "Phân loại và chuyển ly đến phương án xử lý phù hợp đã được kiểm nghiệm.",
+  },
+] as const;
 
 export const materials: Material[] = [
   {
@@ -51,7 +79,7 @@ export const materials: Material[] = [
     englishName: "Coconut fiber",
     range: "75–85% dự kiến",
     description:
-      "Nguồn sợi thực vật chính, được xử lý kích thước và độ ẩm để tạo cấu trúc cho thân ly.",
+      "Nguồn sợi nền chính và duy nhất; kích thước sợi, độ ẩm và mức độ xử lý cần được tối ưu để tạo cấu trúc thân ly.",
     tone: "fiber",
   },
   {
@@ -60,16 +88,16 @@ export const materials: Material[] = [
     englishName: "Bio-binder",
     range: "10–15% dự kiến",
     description:
-      "Thành phần liên kết các sợi thành một khối ổn định; công thức cụ thể cần được thử nghiệm.",
+      "Thành phần dự kiến liên kết các sợi thành một khối ổn định; công thức cụ thể cần được thử nghiệm.",
     tone: "binder",
   },
   {
     number: "03",
-    name: "Lớp chống thấm",
-    englishName: "Inner coating",
+    name: "Màng chống thấm sinh học",
+    englishName: "PLA coating",
     range: "5–10% dự kiến",
     description:
-      "Lớp phủ mỏng bên trong, hướng tới trải nghiệm sử dụng phù hợp cho đồ uống mang đi.",
+      "Lớp phủ mỏng bên trong nhằm giảm rò rỉ; khả năng chịu nhiệt và xử lý sau sử dụng cần được kiểm nghiệm.",
     tone: "coating",
   },
 ];
@@ -101,11 +129,35 @@ export const cycleSteps: CycleStep[] = [
   },
   {
     number: "05",
-    title: "Tái tạo",
-    description: "Chuyển đến phương án xử lý phù hợp đã được xác nhận.",
+    title: "Xử lý phù hợp",
+    description: "Phân loại và chuyển đến phương án xử lý đã được kiểm nghiệm, chấp nhận.",
     icon: Recycle,
   },
 ];
+
+export const researchChecks = [
+  {
+    number: "3–5",
+    unit: "công thức",
+    title: "Thử nghiệm vật liệu",
+    description:
+      "So sánh cách xử lý xơ dừa, độ ẩm và tỷ lệ phối hợp với chất kết dính sinh học.",
+  },
+  {
+    number: "30–60",
+    unit: "phút",
+    title: "Kiểm tra khi sử dụng",
+    description:
+      "Theo dõi độ tan, mùi của xơ dừa, mức độ biến dạng và thay đổi mùi vị đồ uống trong điều kiện thực tế.",
+  },
+  {
+    number: "04",
+    unit: "nhóm đánh giá",
+    title: "Cơ sở lựa chọn",
+    description:
+      "Độ bền, khả năng chống thấm, khả năng chịu nhiệt và phương án xử lý sau sử dụng.",
+  },
+] as const;
 
 export const values: ValuePillar[] = [
   {
@@ -133,21 +185,21 @@ export const values: ValuePillar[] = [
 
 export const partnerBenefits = [
   {
-    title: "Bao bì có câu chuyện",
+    title: "Cốc và nhận diện",
     description:
-      "Một điểm chạm thương hiệu mới, bắt đầu từ vật liệu bản địa và tư duy thiết kế tuần hoàn.",
+      "Giải pháp bao bì có thể được tư vấn theo dung tích, nhu cầu sử dụng và yêu cầu thiết kế của điểm bán.",
     icon: Leaf,
   },
   {
-    title: "Luồng thu gom rõ ràng",
+    title: "Điểm thu gom riêng",
     description:
-      "Thùng thu gom, hướng dẫn phân loại và lịch bàn giao được thiết kế cùng điểm bán.",
+      "Thùng có nhận diện RE-CUP, hướng dẫn phân loại và lịch giao nhận được thống nhất cùng đối tác.",
     icon: Route,
   },
   {
-    title: "Dữ liệu có thể đối chiếu",
+    title: "Dữ liệu bàn giao",
     description:
-      "Theo dõi lượng ly cung cấp, lượng thu hồi và chứng từ bàn giao khi mô hình được triển khai.",
+      "Ghi nhận lượng ly cung cấp, lượng thu hồi và xác nhận tiếp nhận của đơn vị xử lý khi mô hình được triển khai.",
     icon: BarChart3,
   },
 ] as const;
