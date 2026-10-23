@@ -339,7 +339,7 @@ button {
 
   .research-title {
     font-size: clamp(3rem, 4.7vw, 5.2rem) !important;
-    line-height: 1.01 !important;
+    line-height: 1.1 !important;
   }
 
   .research-grid {

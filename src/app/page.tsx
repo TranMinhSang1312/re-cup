@@ -1,18 +1,16 @@
 import Image from "next/image";
 import {
   ArrowDown,
-  ArrowRight,
-  ArrowUpRight,
   FlaskConical,
   Quote,
 } from "lucide-react";
 
 import { CyclePath } from "@/components/visuals/cycle-path";
 import { HeroCupExperience } from "@/components/visuals/hero-cup-experience";
-import { BrandMark } from "@/components/ui/brand-mark";
 import { PageMotion } from "@/components/ui/page-motion";
 import { SectionLabel } from "@/components/ui/section-label";
 import { SectionStepper } from "@/components/ui/section-stepper";
+import { SiteFooter } from "@/components/ui/site-footer";
 import { SiteHeader } from "@/components/ui/site-header";
 import {
   cycleSteps,
@@ -310,10 +308,14 @@ export default function Home() {
             </div>
             <h2
               data-reveal
-              className="research-title max-w-[12ch] font-display text-[clamp(3.35rem,6vw,6.8rem)] leading-[1.04] tracking-[-0.05em]"
+              className="research-title font-display text-[clamp(3.35rem,6vw,6.8rem)] leading-[1.1] tracking-[-0.05em]"
             >
-              Chỉ công bố đặc tính
-              <em className="block font-normal text-leaf">sau khi kiểm nghiệm.</em>
+              <span className="block sm:whitespace-nowrap">
+                Chỉ công bố <span className="whitespace-nowrap">đặc tính</span>
+              </span>
+              <em className="block font-normal text-leaf sm:whitespace-nowrap">
+                sau khi kiểm nghiệm.
+              </em>
             </h2>
           </div>
 
@@ -496,77 +498,7 @@ export default function Home() {
         </div>
       </section>
 
-      <footer
-        id="closing"
-        className="screen-section scroll-mt-6 bg-forest-deep px-5 py-16 text-cream sm:px-8 sm:py-20 lg:px-12"
-      >
-        <div className="mx-auto w-full max-w-[96rem]">
-          <div className="grid gap-12 border-b border-cream/15 pb-12 md:grid-cols-[minmax(0,1fr)_13.5rem] md:items-center md:gap-10 lg:grid-cols-[minmax(0,1fr)_17rem] xl:relative xl:min-h-[28rem] xl:grid-cols-1 xl:gap-0">
-            <div className="xl:max-w-[55rem]">
-              <p className="text-xs font-semibold uppercase tracking-[0.22em] text-leaf">
-                Rethink · Return · Regrow
-              </p>
-              <h2 className="mt-6 max-w-none font-display text-[clamp(2.7rem,5.2vw,6.5rem)] leading-[1.02] tracking-[-0.052em]">
-                <span className="block sm:whitespace-nowrap">
-                  Tận dụng <span className="whitespace-nowrap">phụ phẩm.</span>
-                </span>
-                <em className="block font-normal text-clay">Tái tạo giá trị.</em>
-              </h2>
-              <a
-                href="#top"
-                className="group mt-9 inline-flex w-fit items-center gap-3 rounded-full bg-cream px-6 py-3.5 text-sm font-semibold text-forest-deep transition-colors hover:bg-leaf"
-              >
-                Xem lại hành trình
-                <ArrowUpRight
-                  aria-hidden="true"
-                  className="size-4 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
-                />
-              </a>
-            </div>
-
-            <figure
-              data-reveal
-              className="group relative mx-auto w-full max-w-[13rem] sm:max-w-[15rem] md:max-w-none xl:absolute xl:left-[66%] xl:top-1/2 xl:w-[17rem] xl:-translate-x-1/2 xl:-translate-y-1/2"
-            >
-              <div
-                aria-hidden="true"
-                className="absolute inset-0 translate-x-3 translate-y-3 rounded-[1.35rem] border border-clay/55 transition-transform duration-500 ease-out group-hover:translate-x-4 group-hover:translate-y-4"
-              />
-              <div className="relative aspect-[2/3] overflow-hidden rounded-[1.35rem] border border-cream/20 bg-forest shadow-[0_28px_70px_rgba(0,0,0,0.26)] transition-transform duration-500 ease-out group-hover:-rotate-1 group-hover:scale-[1.015]">
-                <Image
-                  src="/images/return-loop-poster-v1.png"
-                  alt="Poster minh họa vòng quay trả ly của RE-CUP"
-                  fill
-                  sizes="(max-width: 767px) 240px, (max-width: 1023px) 216px, 272px"
-                  className="object-cover"
-                />
-              </div>
-            </figure>
-          </div>
-
-          <div className="grid gap-6 py-7 text-xs text-cream/48 sm:grid-cols-[auto_1fr_auto] sm:items-center">
-            <BrandMark inverse />
-            <p className="sm:text-center">
-              Ý tưởng dự án học tập · Nội dung kỹ thuật đang ở giai đoạn nghiên cứu.
-            </p>
-            <a
-              href="#research"
-              className="group inline-flex items-center gap-2 text-cream/65 hover:text-cream"
-            >
-              Nguyên tắc kiểm nghiệm
-              <ArrowRight
-                aria-hidden="true"
-                className="size-3.5 transition-transform group-hover:translate-x-1"
-              />
-            </a>
-          </div>
-
-          <div className="flex items-center justify-between border-t border-cream/10 pt-5 text-[0.62rem] uppercase tracking-[0.18em] text-cream/30">
-            <span>RE-CUP concept</span>
-            <span>2026</span>
-          </div>
-        </div>
-      </footer>
+      <SiteFooter />
     </main>
   );
 }
